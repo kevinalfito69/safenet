@@ -2,21 +2,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-    {% block title %}
-    {% endblock title %}
-        </title>
-    <link rel="stylesheet" href="{% static 'src/output.css' %}">
-</head>
-<body>
-    
-    {% block body %}
-        
-    {% endblock body %}
-        
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %} {% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'src/output.css' %}" />
+    </head>
+    <body>
+        {% include '_navbar.html' %}
+        <main class="container block">
+            {% block body %} {% endblock body %}
+        </main>
+    </body>
 </html>
